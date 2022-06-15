@@ -23,7 +23,7 @@ function addTodo(todo) {
         todoText = todo.text;
     }
 
-    if (todoText) {
+    if (todoText.length > 2 && todoText.length < 26) {
         const todoEl = document.createElement("li");
         if (todo && todo.completed) {
             todoEl.classList.add("completed");
@@ -50,6 +50,8 @@ function addTodo(todo) {
         input.value = "";
 
         updateLS();
+    } else {
+        alert("Input need more then 2 characters and less than 26 characters");
     }
 }
 
